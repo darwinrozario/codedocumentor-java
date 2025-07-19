@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pride Video Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'rainbow': 'rainbow 3s ease-in-out infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-rainbow': 'pulse-rainbow 2s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        rainbow: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        'pulse-rainbow': {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .rainbow-gradient {
+            background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
+            background-size: 400% 400%;
+            animation: rainbow 3s ease infinite;
+        }
+        .rainbow-border {
+            background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
+            background-size: 400% 400%;
+            animation: rainbow 3s ease infinite;
+            padding: 4px;
+            border-radius: 16px;
+        }
+        .video-container {
+            background: white;
+            border-radius: 12px;
+        }
+        .dark .video-container {
+            background: #1f2937;
+        }
+        .pride-quote {
+            background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 4s ease infinite;
+        }
+        .file-input-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .file-input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        .file-input-button {
+            background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080);
+            background-size: 400% 400%;
+            animation: rainbow 3s ease infinite;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        .file-input-button:hover {
+            transform: scale(1.05);
+        }
+        .video-error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px dashed #ef4444;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            color: #dc2626;
+        }
+    </style>
+</head>
+<body class="min-h-full bg-gradient-to-br from-pink-100 via-purple-50 to-indigo-100 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 transition-colors duration-300">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                <span class="pride-quote">Pride Video Showcase</span>
+            </h1>
+            <div class="flex justify-center items-center space-x-4 mb-4">
+                <span class="text-4xl animate-float">🏳️‍🌈</span>
+                <span class="text-4xl animate-float" style="animation-delay: 0.5s">🏳️‍⚧️</span>
+                <span class="text-4xl animate-float" style="animation-delay: 1s">💖</span>
+                <span class="text-4xl animate-float" style="animation-delay: 1.5s">🌈</span>
+                <span class="text-4xl animate-float" style="animation-delay: 2s">✨</span>
+            </div>
+            <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+                Celebrating authenticity, courage, and the beautiful journey of being true to yourself
+            </p>
+        </div>
+
+        <!-- File Upload Section -->
+        <div class="text-center mb-6">
+            <div class="file-input-container">
+                <input type="file" id="videoFileInput" class="file-input" accept="video/*">
+                <label for="videoFileInput" class="file-input-button">
+                    🔄 Change Video
+                </label>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                Upload a different video file to customize your showcase
+            </p>
+        </div>
+
+        <!-- Video Section -->
+        <div class="w-full max-w-4xl mx-auto mb-8">
+            <div class="rainbow-border">
+                <div class="video-container">
+                    <video 
+                        id="prideVideo"
+                        class="w-full h-auto rounded-lg shadow-2xl hidden"
+                        controls
+                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='rainbow' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:%23ff0000'/%3E%3Cstop offset='16.66%25' style='stop-color:%23ff8000'/%3E%3Cstop offset='33.33%25' style='stop-color:%23ffff00'/%3E%3Cstop offset='50%25' style='stop-color:%2300ff00'/%3E%3Cstop offset='66.66%25' style='stop-color:%2300ffff'/%3E%3Cstop offset='83.33%25' style='stop-color:%230000ff'/%3E%3Cstop offset='100%25' style='stop-color:%23ff00ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23rainbow)'/%3E%3Ctext x='400' y='225' text-anchor='middle' dominant-baseline='middle' font-family='Arial, sans-serif' font-size='48' fill='white' font-weight='bold'%3EYour Pride Video%3C/text%3E%3C/svg%3E"
+                    >
+                        <p class="text-center p-8 text-gray-600 dark:text-gray-400">
+                            Your browser doesn't support video playback. Please use a modern browser to view this content.
+                        </p>
+                    </video>
+                    
+                    <!-- Placeholder when no video is loaded -->
+                    <div id="videoPlaceholder" class="video-error">
+                        <div class="text-6xl mb-4">🎬</div>
+                        <h3 class="text-xl font-bold mb-2">Loading Pride Video...</h3>
+                        <p>Please wait while we load your showcase video!</p>
+                        <div class="mt-4 text-sm opacity-75">
+                            <p>If this takes too long, try uploading your own video above</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pride Quotes Section -->
+        <div class="w-full max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-purple-200 dark:border-purple-700">
+                    <div class="text-center">
+                        <span class="text-3xl mb-4 block animate-pulse-rainbow">🌈</span>
+                        <blockquote class="pride-quote text-lg font-semibold mb-3">
+                            "Be yourself; everyone else is already taken."
+                        </blockquote>
+                        <cite class="text-gray-600 dark:text-gray-400">- Oscar Wilde</cite>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-pink-200 dark:border-pink-700">
+                    <div class="text-center">
+                        <span class="text-3xl mb-4 block animate-pulse-rainbow" style="animation-delay: 0.5s">💖</span>
+                        <blockquote class="pride-quote text-lg font-semibold mb-3">
+                            "Your identity is your most beautiful accessory."
+                        </blockquote>
+                        <cite class="text-gray-600 dark:text-gray-400">- Anonymous</cite>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-blue-200 dark:border-blue-700">
+                    <div class="text-center">
+                        <span class="text-3xl mb-4 block animate-pulse-rainbow" style="animation-delay: 1s">✨</span>
+                        <blockquote class="pride-quote text-lg font-semibold mb-3">
+                            "Pride is not the opposite of shame, but its absence."
+                        </blockquote>
+                        <cite class="text-gray-600 dark:text-gray-400">- Iroh</cite>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-green-200 dark:border-green-700">
+                    <div class="text-center">
+                        <span class="text-3xl mb-4 block animate-pulse-rainbow" style="animation-delay: 1.5s">🏳️‍🌈</span>
+                        <blockquote class="pride-quote text-lg font-semibold mb-3">
+                            "Love wins when we refuse to let fear be louder than our hearts."
+                        </blockquote>
+                        <cite class="text-gray-600 dark:text-gray-400">- Anonymous</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-12 text-center">
+            <div class="flex justify-center items-center space-x-2 mb-4">
+                <span class="text-2xl">🏳️‍🌈</span>
+                <span class="pride-quote text-lg font-semibold">Love is Love</span>
+                <span class="text-2xl">🏳️‍🌈</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400">
+                Celebrating diversity, promoting equality, spreading love
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Handle file upload and video display
+        window.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('prideVideo');
+            const fileInput = document.getElementById('videoFileInput');
+            const placeholder = document.getElementById('videoPlaceholder');
+
+            // Load default video on page load
+            loadDefaultVideo();
+
+            function loadDefaultVideo() {
+                // Your specified video path
+                const defaultVideoPath = 'videos/aravideo.mkv';
+                
+                // Set the default video source
+                video.src = defaultVideoPath;
+                video.classList.remove('hidden');
+                placeholder.style.display = 'none';
+                
+                // Load the video
+                video.load();
+                
+                console.log('Loading default video:', defaultVideoPath);
+            }
+
+            // Handle file selection
+            fileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                
+                if (file) {
+                    // Check if it's a video file
+                    if (file.type.startsWith('video/')) {
+                        // Create object URL for the selected file
+                        const videoURL = URL.createObjectURL(file);
+                        
+                        // Set video source and show video
+                        video.src = videoURL;
+                        video.classList.remove('hidden');
+                        placeholder.style.display = 'none';
+                        
+                        // Load and play the video
+                        video.load();
+                        
+                        // Clean up object URL when video is loaded
+                        video.addEventListener('loadstart', () => {
+                            // Object URL will be cleaned up when the video is done
+                        });
+                        
+                        console.log('Video loaded successfully:', file.name);
+                    } else {
+                        alert('Please select a valid video file (MP4, WebM, OGV, etc.)');
+                        fileInput.value = ''; // Clear invalid selection
+                    }
+                } else {
+                    // No file selected, reload default video
+                    loadDefaultVideo();
+                }
+            });
+
+            // Handle video load errors
+            video.addEventListener('error', (e) => {
+                console.error('Video load error:', e);
+                
+                // If default video fails to load, show file upload option
+                if (video.src.includes('aravideo.mkv')) {
+                    console.log('Default video not found, showing file upload option');
+                    video.classList.add('hidden');
+                    placeholder.style.display = 'block';
+                    placeholder.innerHTML = `
+                        <div class="text-6xl mb-4">🎬</div>
+                        <h3 class="text-xl font-bold mb-2">Video Not Found</h3>
+                        <p>The default video (aravideo.mkv) could not be loaded.</p>
+                        <p class="mt-2">Please upload your own video using the button above!</p>
+                        <div class="mt-4 text-sm opacity-75">
+                            <p>Supported formats: MP4, WebM, OGV, MOV</p>
+                            <p>Make sure the video file is in the 'videos' folder</p>
+                        </div>
+                    `;
+                } else {
+                    // Custom video failed to load
+                    video.classList.add('hidden');
+                    placeholder.style.display = 'block';
+                    placeholder.innerHTML = `
+                        <div class="text-6xl mb-4">⚠️</div>
+                        <h3 class="text-xl font-bold mb-2">Video Load Error</h3>
+                        <p>There was an issue loading your video. Please try a different file.</p>
+                        <div class="mt-4 text-sm opacity-75">
+                            <p>Make sure your video is in a supported format (MP4 recommended)</p>
+                        </div>
+                    `;
+                }
+            });
+
+            // Handle successful video load
+            video.addEventListener('loadeddata', () => {
+                console.log('Video loaded successfully and ready to play');
+                // Hide placeholder when video loads successfully
+                placeholder.style.display = 'none';
+                video.classList.remove('hidden');
+            });
+
+            // Show loading state initially
+            video.addEventListener('loadstart', () => {
+                placeholder.innerHTML = `
+                    <div class="text-6xl mb-4">⏳</div>
+                    <h3 class="text-xl font-bold mb-2">Loading Video...</h3>
+                    <p>Please wait while your Pride video loads</p>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
