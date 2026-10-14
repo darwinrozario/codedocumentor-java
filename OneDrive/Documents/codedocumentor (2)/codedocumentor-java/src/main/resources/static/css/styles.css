@@ -1,0 +1,894 @@
+/* Custom styles for Code Auto Documenter */
+
+.code-preview {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.progress-bar {
+    transition: width 0.3s ease;
+}
+
+.file-drop-zone {
+    transition: all 0.3s ease;
+}
+
+.file-drop-zone.dragover {
+    border-color: #5D5CDE;
+    background-color: rgba(93, 92, 222, 0.1);
+}
+
+/* Documentation Content Styling */
+.documentation-content {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #374151;
+}
+
+.documentation-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.documentation-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.25rem;
+}
+
+.documentation-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+}
+
+.documentation-content h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #6b7280;
+}
+
+.documentation-content p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.documentation-content strong {
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.documentation-content em {
+    font-style: italic;
+    color: #6b7280;
+}
+
+.documentation-content code {
+    background-color: #f3f4f6;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    color: #dc2626;
+}
+
+.documentation-content pre {
+    background-color: #1f2937;
+    color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid #374151;
+}
+
+.documentation-content pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.documentation-content ul, .documentation-content ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.documentation-content li {
+    margin-bottom: 0.5rem;
+}
+
+.documentation-content blockquote {
+    border-left: 4px solid #5D5CDE;
+    padding-left: 1rem;
+    margin: 1rem 0;
+    background-color: #f8fafc;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+.documentation-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.documentation-content th {
+    background-color: #f3f4f6;
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.documentation-content td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.documentation-content tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Dark mode styles */
+.dark .documentation-content {
+    color: #d1d5db;
+}
+
+.dark .documentation-content h1 {
+    color: #f9fafb;
+    border-bottom-color: #4b5563;
+}
+
+.dark .documentation-content h2 {
+    color: #e5e7eb;
+    border-bottom-color: #4b5563;
+}
+
+.dark .documentation-content h3 {
+    color: #d1d5db;
+}
+
+.dark .documentation-content h4 {
+    color: #9ca3af;
+}
+
+.dark .documentation-content strong {
+    color: #f9fafb;
+}
+
+.dark .documentation-content em {
+    color: #9ca3af;
+}
+
+.dark .documentation-content code {
+    background-color: #374151;
+    color: #f87171;
+}
+
+.dark .documentation-content pre {
+    background-color: #111827;
+    border-color: #374151;
+}
+
+.dark .documentation-content blockquote {
+    background-color: #1f2937;
+    border-left-color: #5D5CDE;
+}
+
+.dark .documentation-content table {
+    background-color: #1f2937;
+}
+
+.dark .documentation-content th {
+    background-color: #374151;
+    border-bottom-color: #4b5563;
+}
+
+.dark .documentation-content td {
+    border-bottom-color: #374151;
+}
+
+.dark .documentation-content tr:hover {
+    background-color: #374151;
+}
+
+/* File list styling */
+#fileItems {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+#fileItems::-webkit-scrollbar {
+    width: 6px;
+}
+
+#fileItems::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+#fileItems::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+#fileItems::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.dark #fileItems {
+    scrollbar-color: #475569 #1e293b;
+}
+
+.dark #fileItems::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark #fileItems::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+.dark #fileItems::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Fullscreen Modal Styles */
+.fullscreen-modal {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.fullscreen-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.fullscreen-content {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.dark .fullscreen-content {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
+
+.fullscreen-content .documentation-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    padding: 2rem;
+    margin: 0;
+}
+
+.dark .fullscreen-content .documentation-content {
+    background: #1a202c;
+    border: 1px solid #2d3748;
+}
+
+/* Enhanced documentation content styling for fullscreen */
+.fullscreen-content .documentation-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a202c;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.dark .fullscreen-content .documentation-content h1 {
+    color: #f7fafc;
+    border-bottom-color: #667eea;
+}
+
+.fullscreen-content .documentation-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 4px solid #667eea;
+}
+
+.dark .fullscreen-content .documentation-content h2 {
+    color: #e2e8f0;
+}
+
+.fullscreen-content .documentation-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.dark .fullscreen-content .documentation-content h3 {
+    color: #cbd5e0;
+}
+
+.fullscreen-content .documentation-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.dark .fullscreen-content .documentation-content p {
+    color: #e2e8f0;
+}
+
+.fullscreen-content .documentation-content code {
+    background: #f7fafc;
+    color: #e53e3e;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border: 1px solid #e2e8f0;
+}
+
+.dark .fullscreen-content .documentation-content code {
+    background: #2d3748;
+    color: #fbb6ce;
+    border-color: #4a5568;
+}
+
+.fullscreen-content .documentation-content pre {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.dark .fullscreen-content .documentation-content pre {
+    background: #2d3748;
+    border-color: #4a5568;
+}
+
+.fullscreen-content .documentation-content pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* Responsive adjustments for fullscreen */
+@media (max-width: 768px) {
+    .fullscreen-header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .fullscreen-content .documentation-content {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+    
+    .fullscreen-content .documentation-content h1 {
+        font-size: 2rem;
+    }
+    
+    .fullscreen-content .documentation-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fullscreen-header {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Custom scrollbar for fullscreen content */
+.fullscreen-content {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.fullscreen-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.fullscreen-content::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.fullscreen-content::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.fullscreen-content::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.dark .fullscreen-content {
+    scrollbar-color: #475569 #1e293b;
+}
+
+.dark .fullscreen-content::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark .fullscreen-content::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+.dark .fullscreen-content::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* GitHub Repository Analysis Styles */
+#githubStatus {
+    transition: all 0.3s ease;
+}
+
+#githubStatusIcon {
+    display: flex;
+    align-items: center;
+}
+
+#githubStatusIcon i {
+    font-size: 1rem;
+}
+
+#githubStatusIcon .fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* GitHub URL input focus styles */
+#githubUrl:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* GitHub button disabled state */
+#analyzeGithubBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* GitHub section hover effects */
+.bg-gradient-to-r.from-purple-50.to-blue-50:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.dark .bg-gradient-to-r.from-purple-900\/20.to-blue-900\/20:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* Chatbot Styles */
+#chatbotContainer {
+    transition: all 0.3s ease;
+}
+
+#chatMessages {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+#chatMessages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chatMessages::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+#chatMessages::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+#chatMessages::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.dark #chatMessages {
+    scrollbar-color: #475569 #1e293b;
+}
+
+.dark #chatMessages::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark #chatMessages::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+.dark #chatMessages::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Chat message animations */
+@keyframes slideInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.chat-message-user {
+    animation: slideInRight 0.3s ease-out;
+}
+
+.chat-message-bot {
+    animation: slideInLeft 0.3s ease-out;
+}
+
+/* Chatbot input focus styles */
+#chatInput:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* Chatbot button disabled state */
+#sendChatBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Chatbot toggle button */
+#toggleChatbotBtn {
+    transition: all 0.3s ease;
+}
+
+#toggleChatbotBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* Chat message styling */
+.chat-message {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.chat-message pre {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    overflow-x: auto;
+    font-size: 0.875rem;
+}
+
+.dark .chat-message pre {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+.chat-message code {
+    background: #f3f4f6;
+    color: #dc2626;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.dark .chat-message code {
+    background: #374151;
+    color: #f87171;
+}
+
+.chat-message ul, .chat-message ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.chat-message li {
+    margin-bottom: 0.25rem;
+}
+
+.chat-message strong {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.dark .chat-message strong {
+    color: #f9fafb;
+}
+
+.chat-message em {
+    font-style: italic;
+    color: #6b7280;
+}
+
+.dark .chat-message em {
+    color: #9ca3af;
+}
+
+/* GitHub Markdown Styling */
+.markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 45px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 16px;
+    line-height: 1.5;
+    color: #24292f;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.dark .markdown-body {
+    color: #e6edf3;
+    background-color: #0d1117;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #24292f;
+}
+
+.dark .markdown-body h1,
+.dark .markdown-body h2,
+.dark .markdown-body h3,
+.dark .markdown-body h4,
+.dark .markdown-body h5,
+.dark .markdown-body h6 {
+    color: #e6edf3;
+}
+
+.markdown-body h1 {
+    font-size: 2em;
+    border-bottom: 1px solid #d0d7de;
+    padding-bottom: 0.3em;
+}
+
+.dark .markdown-body h1 {
+    border-bottom-color: #30363d;
+}
+
+.markdown-body h2 {
+    font-size: 1.5em;
+    border-bottom: 1px solid #d0d7de;
+    padding-bottom: 0.3em;
+}
+
+.dark .markdown-body h2 {
+    border-bottom-color: #30363d;
+}
+
+.markdown-body h3 {
+    font-size: 1.25em;
+}
+
+.markdown-body h4 {
+    font-size: 1em;
+}
+
+.markdown-body h5 {
+    font-size: 0.875em;
+}
+
+.markdown-body h6 {
+    font-size: 0.85em;
+    color: #656d76;
+}
+
+.dark .markdown-body h6 {
+    color: #7d8590;
+}
+
+.markdown-body p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+
+.markdown-body li {
+    margin-bottom: 0.25em;
+}
+
+.markdown-body code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(175, 184, 193, 0.2);
+    border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.dark .markdown-body code {
+    background-color: rgba(110, 118, 129, 0.4);
+}
+
+.markdown-body pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.dark .markdown-body pre {
+    background-color: #161b22;
+}
+
+.markdown-body pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+}
+
+.markdown-body blockquote {
+    padding: 0 1em;
+    color: #656d76;
+    border-left: 0.25em solid #d0d7de;
+    margin: 0 0 16px 0;
+}
+
+.dark .markdown-body blockquote {
+    color: #7d8590;
+    border-left-color: #30363d;
+}
+
+.markdown-body table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+    padding: 6px 13px;
+    border: 1px solid #d0d7de;
+}
+
+.dark .markdown-body table th,
+.dark .markdown-body table td {
+    border-color: #30363d;
+}
+
+.markdown-body table th {
+    font-weight: 600;
+    background-color: #f6f8fa;
+}
+
+.dark .markdown-body table th {
+    background-color: #161b22;
+}
+
+.markdown-body table tr {
+    background-color: #ffffff;
+    border-top: 1px solid #d0d7de;
+}
+
+.dark .markdown-body table tr {
+    background-color: #0d1117;
+    border-top-color: #30363d;
+}
+
+.markdown-body table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+.dark .markdown-body table tr:nth-child(2n) {
+    background-color: #161b22;
+}
+
+.markdown-body hr {
+    height: 0.25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: #d0d7de;
+    border: 0;
+}
+
+.dark .markdown-body hr {
+    background-color: #30363d;
+}
+
+/* Override documentation content styling for markdown */
+.markdown-body .documentation-heading {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Ensure proper spacing for markdown content */
+#documentationContent.markdown-body {
+    padding: 20px;
+    margin: 0;
+    max-width: none;
+    width: 100%;
+} 
