@@ -33,7 +33,7 @@ public class GitHubService {
     @Value("${GITHUB_CLIENT_SECRET:}")
     private String clientSecret;
 
-    @Value("${GITHUB_REDIRECT_URI:http://localhost:8080/auth/github/callback}")
+    @Value("${GITHUB_REDIRECT_URI:https://codedocumentor-java.onrender.com/auth/github/callback}")
     private String redirectUri;
 
     private final FileProcessingService fileProcessingService;
